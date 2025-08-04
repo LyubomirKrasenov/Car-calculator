@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import os
 car_type = ""
 data_of_cars = ""
 st.title("Car Calculator")
@@ -77,23 +78,23 @@ if main_answer == "yes":
     if right_car == "yes":
         st.write("These are the most popular cars in this segment")
         if car_type == "Subcompact(B-segment)":
-            data_of_cars = pd.read_csv(r"C:\Users\Lubomir\Desktop\cars.csv", usecols=["B-segment"])
+            data_of_cars = pd.read_csv("CARS.csv", usecols=["B-segment"])
         elif car_type == "Small family car(C-segment)":
-            data_of_cars = pd.read_csv(r"C:\Users\Lubomir\Desktop\cars.csv", usecols=["C-segment"])
+            data_of_cars = pd.read_csv("CARS.csv", usecols=["C-segment"])
         elif car_type == "Large family car(D-segment)":
-            data_of_cars = pd.read_csv(r"C:\Users\Lubomir\Desktop\cars.csv", usecols=["D-segment"])
+            data_of_cars = pd.read_csv("CARS.csv" , usecols=["D-segment"])
         elif car_type == "Executive (E-segment)":
-            data_of_cars = pd.read_csv(r"C:\Users\Lubomir\Desktop\cars.csv", usecols=["E-segment"])
+            data_of_cars = pd.read_csv("CARS.csv" , usecols=["E-segment"])
         elif car_type == "Luxury(F-segment)":
-            data_of_cars = pd.read_csv(r"C:\Users\Lubomir\Desktop\cars.csv", usecols=["F-segment"])
+            data_of_cars = pd.read_csv("CARS.csv" , usecols=["F-segment"])
         elif car_type == "Subcompact crossover SUV (B-segment)":
-            data_of_cars = pd.read_csv(r"C:\Users\Lubomir\Desktop\cars.csv", usecols=["SUV(B)"])
+            data_of_cars = pd.read_csv("CARS.csv" , usecols=["SUV(B)"])
         elif car_type == "Compact crossover SUV (C-segment)":
-            data_of_cars = pd.read_csv(r"C:\Users\Lubomir\Desktop\cars.csv", usecols=["SUV(C)"])
+            data_of_cars = pd.read_csv("CARS.csv" , usecols=["SUV(C)"])
         elif car_type == "Mid-size crossover SUV (D/E-segment)":
-            data_of_cars = pd.read_csv(r"C:\Users\Lubomir\Desktop\cars.csv", usecols=["SUV(D)"])
+            data_of_cars = pd.read_csv("CARS.csv" , usecols=["SUV(D/E)"])
         elif car_type == "Full-size crossover SUV":
-            data_of_cars = pd.read_csv(r"C:\Users\Lubomir\Desktop\cars.csv", usecols=["SUV(F)"])
+            data_of_cars = pd.read_csv("CARS.csv" , usecols=["SUV(F)"])
         st.write(data_of_cars)
 car_list = st.radio("Now would you like to see car classifieds in your region(yes/no)? ", options=("yes", "no"))
 if car_list == "yes":
